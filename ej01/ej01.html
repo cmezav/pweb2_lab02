@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>JavaScript Dates</h1>
+    <button onclick="actualDate()">Obtener día de la semana actual</button>
+    <p id="demo"></p>
+    <script>
+        function actualDate () {
+            const d = new Date();
+            let numeroDia = d.getDay();
+            let dia = "";
+            switch (numeroDia) {
+                case 0: dia = "Domingo";
+                break;
+                case 1: dia = "Lunes"
+                break;
+                case 2: dia = "Martes"
+                break;
+                case 3: dia = "Miércoles"
+                break;
+                case 4: dia = "Jueves"
+                break;
+                case 5: dia = "Viernes"
+                break;
+                case 6: dia = "Sábado"
+                break;
+                case 7: dia = "Domingo"
+                break;
+            }
+            document.getElementById("demo").innerHTML = dia;
+        }
+    </script>
+</body>
+</html>
