@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h2>URL de Google Meet</h2>
+    <div>
+        <label for="url">Ingrese aquí su URL: </label>
+        <input type="url" id="url" name="url" size="40"><br><br>
+    </div>
+    <div>
+        <button onclick="extraer()">Extraer código</button>
+    </div>
+    <h2>Código de la sesión:</h2>
+    <div id="demo"></div>
+    <script>
+        function extraer() {
+            let link = document.getElementById("url").value;
+            // Expresión regular para extraer el código
+            let codigo;
+            document.getElementById("demo").innerHTML = codigo;
+        }
+    </script>
+</body>
+</html>
