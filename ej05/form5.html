@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario tabla</title>
+    <style>
+        input {
+            margin: 5px;
+        }
+        #izquierda, #derecha {
+            width: 50%;
+            float: left;
+            padding-bottom: 20px;
+        }
+        #tabla {
+            border: 5px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="izquierda">
+        <h1>Formulario</h1>
+        <div id="form">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" name="cantidad" id="cantidad" placeholder="Cantidad de valores a ingresar" min="1">
+            <button onclick="crearInput()">Enviar</button>
+        </div>
+        <h2>Ingresar los números:</h2>
+        <form id="numeros"></form>
+        <button onclick="tabla()">Crear tabla</button>
+    </div>
+    <div id="derecha">
+        <h1>Tabla</h1>
+        <table id="tabla">
+            <thead>
+                <th>Valores</th>
+            </thead>
+        </table>
+    </div>
+
+    <script>
+
+        let numeros = new Array();
+        let cantidad = document.getElementById("cantidad").value;
+        Number(cantidad);
+
+        function crearInput() {
+
+            let salida = "";
+
+            for (let i = 0; i < cantidad; i++) {
+                let fila = "<label>";
+                fila = fila + "Número " + (i + 1) + ":</label>";
+                fila = fila + "<input type='number' id='numero" + (i + 1) + "' >"
+                fila = fila + "<br>";
+                salida = salida + fila;
+                let id = "numero" + (i+1);
+            }
+            document.getElementById("numeros").innerHTML = salida;
+        }
+
+        function tabla() {
+            for (let i = 0; i < cantidad; i++) {
+                let id = "numero" + (i+1);
+                let numero = document.getElementById(id).value;
+                Number(numero);
+                numeros.push(numero);
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
