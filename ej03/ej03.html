@@ -14,14 +14,14 @@
 <body>
     <h1>Día de Arequipa: 15 de Agosto</h1>
     <h3>Faltan: <p id="demo"></p></h3>
-    <h5>Hoy: <p id="demo2"></p></h5>
+    <h5>Hoy es: <p id="demo2"></p></h5>
     <script>
         let diaActual = new Date();
         document.getElementById("demo2").innerHTML = diaActual;
         let diaArequipa = new Date(2023, 07, 15);
-        console.log(diaArequipa);
         let diferencia = diaArequipa.getTime() - diaActual.getTime();
-        console.log(diferencia);
+        let dias = Math.ceil(diferencia/(1000 * 3600 * 24));
+        document.getElementById("demo").innerText = dias + " días";
     </script>
 </body>
 </html>
