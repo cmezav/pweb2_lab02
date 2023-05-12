@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+         text-align: center;   
+        }
+    </style>
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>Día de Arequipa: 15 de Agosto</h1>
+    <h3>Faltan: <p id="demo"></p></h3>
+    <h5>Hoy: <p id="demo2"></p></h5>
+    <script>
+        let diaActual = new Date();
+        document.getElementById("demo2").innerHTML = diaActual;
+        let diaArequipa = new Date(2023, 07, 15);
+        console.log(diaArequipa);
+        let diferencia = diaArequipa.getTime() - diaActual.getTime();
+        console.log(diferencia);
+    </script>
+</body>
+</html>
