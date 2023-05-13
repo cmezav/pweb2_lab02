@@ -10,7 +10,7 @@
     <h2>URL de Google Meet</h2>
     <div>
         <label for="url">Ingrese aquí su URL: </label>
-        <input type="url" id="url" name="url" size="40"><br><br>
+        <input type="url" id="url" name="url" placeholder="Google Meet Link" size="40"><br><br>
     </div>
     <div>
         <button onclick="extraer()">Extraer código</button>
@@ -20,9 +20,11 @@
     <script>
         function extraer() {
             let link = document.getElementById("url").value;
-            // Expresión regular para extraer el código
-            let codigo;
-            document.getElementById("demo").innerHTML = codigo;
+            let acumulador = "";
+            if (link.substring(0,24) == "https://meet.google.com/") {
+              acumulador = acumulador + link.substring(24,27) +  link.substring(28,32) +  link.substring(33,36);
+            }
+            document.getElementById("demo").innerHTML = acumulador;
         }
     </script>
 </body>
