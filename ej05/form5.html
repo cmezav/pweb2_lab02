@@ -39,21 +39,22 @@
             <thead>
                 <th>Valores</th>
             </thead>
+            <tbody id="cuerpoTabla">
+                
+            </tbody>
         </table>
+        <h4>La suma de los valores es: <span id="suma"></span></h4>
     </div>
 
     <script>
 
-        let numeros = new Array();
-        let cantidad = document.getElementById("cantidad").value;
-        Number(cantidad);
-
         function crearInput() {
-
+            let cantidad = document.getElementById("cantidad").value;
+            Number(cantidad);
             let salida = "";
-
             for (let i = 0; i < cantidad; i++) {
-                let fila = "<label>";
+                let fila = "<label";
+                fila = fila + "for='numero" + (i+1) + "'>";
                 fila = fila + "Número " + (i + 1) + ":</label>";
                 fila = fila + "<input type='number' id='numero" + (i + 1) + "' >"
                 fila = fila + "<br>";
@@ -64,13 +65,22 @@
         }
 
         function tabla() {
+            let cantidad = document.getElementById("cantidad").value;
+            Number(cantidad);
+            let salida = "";
+            let sumatoria = 0;
             for (let i = 0; i < cantidad; i++) {
                 let id = "numero" + (i+1);
                 let numero = document.getElementById(id).value;
-                Number(numero);
-                numeros.push(numero);
+                sumatoria = sumatoria + Number(numero);
+                let fila = "<tr>";
+                    fila = fila + "<td>" + numero + "</td>";
+                    fila = fila  + "</tr>";
+                    salida = salida + fila;
             }
-
+            document.getElementById("cuerpoTabla").innerHTML = salida;
+            document.getElementById("suma").innerHTML = sumatoria;
+            console.log(suma);
         }
 
 
