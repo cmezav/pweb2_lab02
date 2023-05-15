@@ -23,8 +23,11 @@
             let acumulador = "";
             if (link.substring(0,24) == "https://meet.google.com/") {
               acumulador = acumulador + link.substring(24,27) +  link.substring(28,32) +  link.substring(33,36);
+              document.getElementById("demo").innerHTML = acumulador;
             }
-            document.getElementById("demo").innerHTML = acumulador;
+            else {
+                alert("No es un link de Google Meet");
+            }
         }
     </script>
 </body>
