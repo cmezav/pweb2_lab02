@@ -21,13 +21,17 @@
         function extraer() {
             let link = document.getElementById("url").value;
             let acumulador = "";
+            console.log(link.substring(0,16));
             if (link.substring(0,24) == "https://meet.google.com/") {
               acumulador = acumulador + link.substring(24,27) +  link.substring(28,32) +  link.substring(33,36);
-              document.getElementById("demo").innerHTML = acumulador;
+            }
+            else if (link.substring(0,16)=="meet.google.com/") {
+              acumulador = acumulador + link.substring(16,19) + link.substring(20,24) + link.substring(25,28);
             }
             else {
                 alert("No es un link de Google Meet");
             }
+            document.getElementById("demo").innerHTML = acumulador;
         }
     </script>
 </body>
